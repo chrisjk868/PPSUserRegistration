@@ -5,12 +5,12 @@ const router = express.Router();
 
 //login handle
 router.get('/login',(req,res)=>{
-    res.render('login');
+  res.render('login');
 })
 
 router.get('/register',(req,res)=>{
-    res.render('register')
-    })
+  res.render('register')
+})
 
 //Register handle
 router.post('/register',(req,res)=>{
@@ -48,16 +48,30 @@ router.post('/register',(req,res)=>{
           email : email,
           password : password
         });
+        bcrypt.genSalt(10,(err,salt)=>
+        bcrypt.hash(newUser.password, salt, (err,hash)=> {
+          if(err) throw err;
+              //save password to hash
+              newUser.password = hash;
+          //save user
+          newUser.save()
+          .then((value)=>{
+              console.log(value)
+          res.redirect('/users/login');
+          })
+          .catch(value=> console.log(value));
+
+        }));
       }
     })
   }
 })
 
 router.post('/login',(req,res,next)=>{
-  })
+})
 
 //logout
 router.get('/logout',(req,res)=>{
- })
+})
 
 module.exports  = router;
