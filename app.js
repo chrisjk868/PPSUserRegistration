@@ -4,7 +4,8 @@ const app = express();
 const mongoose = require('mongoose');
 const expressEjsLayout = require('express-ejs-layouts')
 //mongoose
-mongoose.connect('mongodb://localhost/test',{useNewUrlParser: true, useUnifiedTopology : true})
+mongoose.connect('mongodb+srv://<USERNAME>:<PASSWORD>@ppsaccountinfocluster.uisvs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+{useNewUrlParser: true, useUnifiedTopology : true})
 .then(() => console.log('Connected to Cluster'))
 .catch((err)=> console.log(err));
 //EJS
