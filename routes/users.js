@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const User = require("../models/users.js");
+const passport = require('passport');
 const express = require('express');
 const router = express.Router();
 
@@ -17,7 +18,7 @@ router.get('/register',(req,res)=>{
 router.post('/register',(req,res)=>{
   const {name,email, password, password2} = req.body;
   let errors = [];
-  console.log(' Name ' + name+ ' email :' + email+ ' pass:' + password);
+  console.log(' Name ' + name + ' email :' + email + ' pass:' + password);
   if(!name || !email || !password || !password2) {
       errors.push({msg : "Please fill in all fields"})
   }
@@ -69,11 +70,19 @@ router.post('/register',(req,res)=>{
   }
 })
 
-router.post('/login',(req,res,next)=>{
+router.post('/login', (req, res, next)=>{
+  passport.authenticate('local',{
+    successRedirect : '/dashboard',
+    failureRedirect : '/users/login',
+    failureFlash : true
+  })(req,res,next);
 })
 
 //logout
-router.get('/logout',(req,res)=>{
+router.get('/logout', (req, res)=>{
+  req.logout();
+  req.flash('success_msg','Now logged out');
+  res.redirect('/users/login');
 })
 
 module.exports  = router;

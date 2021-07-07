@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const expressEjsLayout = require('express-ejs-layouts')
 const session = require('express-session');
 const flash = require('connect-flash');
+const passport = require('passport');
+require("./config/passport")(passport)
 
 //mongoose
 mongoose.connect('mongodb+srv://<USERNAME>:<PASSWORD>@ppsaccountinfocluster.uisvs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
@@ -23,7 +25,9 @@ app.use(session({
     secret : 'secret',
     resave : true,
     saveUninitialized : true
-   }));
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 //use flash
 app.use(flash());
 app.use((req,res,next)=> {
