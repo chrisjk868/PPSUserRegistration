@@ -16,7 +16,7 @@ mongoose.connect('mongodb+srv://<USERNAME>:<PASSWORD>@ppsaccountinfocluster.uisv
 
 //EJS
 app.set('view engine','ejs');
-app.use(expressEjsLayout);
+app.use(express.static(__dirname + '/public'));
 
 //BodyParser
 app.use(express.urlencoded({extended : false}));

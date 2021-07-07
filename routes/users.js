@@ -6,16 +6,16 @@ const express = require('express');
 const router = express.Router();
 
 //login handle
-router.get('/login',(req,res)=>{
+router.get('/login', (req, res) => {
   res.render('login');
 })
 
-router.get('/register',(req,res)=>{
+router.get('/register', (req, res) => {
   res.render('register')
 })
 
 //Register handle
-router.post('/register',(req,res)=>{
+router.post('/register', (req, res) => {
   const {name,email, password, password2} = req.body;
   let errors = [];
   console.log(' Name ' + name + ' email :' + email + ' pass:' + password);
@@ -50,27 +50,27 @@ router.post('/register',(req,res)=>{
           email : email,
           password : password
         });
-        bcrypt.genSalt(10,(err,salt)=>
-        bcrypt.hash(newUser.password, salt, (err,hash)=> {
+        bcrypt.genSalt(10, (err, salt) =>
+        bcrypt.hash(newUser.password, salt, (err, hash) => {
           if(err) throw err;
               //save password to hash
               newUser.password = hash;
           //save user
           newUser
             .save()
-            .then((value)=>{
+            .then((value) => {
               console.log(value)
               req.flash('success_msg','You have now registered!')
               res.redirect('/users/login');
             })
-            .catch(value=> console.log(value));
+            .catch(value => console.log(value));
         }));
       }
     })
   }
 })
 
-router.post('/login', (req, res, next)=>{
+router.post('/login', (req, res, next) => {
   passport.authenticate('local',{
     successRedirect : '/dashboard',
     failureRedirect : '/users/login',
@@ -79,7 +79,7 @@ router.post('/login', (req, res, next)=>{
 })
 
 //logout
-router.get('/logout', (req, res)=>{
+router.get('/logout', (req, res) => {
   req.logout();
   req.flash('success_msg','Now logged out');
   res.redirect('/users/login');
