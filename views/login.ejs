@@ -1,5 +1,5 @@
 <h1> Login </h1>
-
+<%- include ('./partials/messages') %>
 <form action="/users/login" method="POST">
 <div>
 <label for="email">Email</label>
@@ -16,8 +16,8 @@ placeholder="Enter Email"
       name="password"
       placeholder="Enter Password"
     />
-  
+
 </div>
 <button type="submit" class="btn btn-primary btn-block">Login</button>
-   
+
 </form>
