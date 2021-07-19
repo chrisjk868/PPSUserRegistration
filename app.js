@@ -6,10 +6,11 @@ const expressEjsLayout = require('express-ejs-layouts')
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
+const config = require('./config/config.js');
 require("./config/passport")(passport)
 
 //mongoose
-mongoose.connect('mongodb+srv://chrisjk868:jellyboard@ppsaccountinfocluster.uisvs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect(config.uri,
 {useNewUrlParser: true, useUnifiedTopology : true})
 .then(() => console.log('Connected to Cluster'))
 .catch((err)=> console.log(err));
