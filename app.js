@@ -9,7 +9,7 @@ const passport = require('passport');
 require("./config/passport")(passport)
 
 //mongoose
-mongoose.connect('mongodb+srv://<USERNAME>:<PASSWORD>@ppsaccountinfocluster.uisvs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://chrisjk868:jellyboard@ppsaccountinfocluster.uisvs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
 {useNewUrlParser: true, useUnifiedTopology : true})
 .then(() => console.log('Connected to Cluster'))
 .catch((err)=> console.log(err));
