@@ -5,12 +5,12 @@ const mongoose = require('mongoose');
 const expressEjsLayout = require('express-ejs-layouts')
 const session = require('express-session');
 const flash = require('connect-flash');
+require('dotenv').config();
 const passport = require('passport');
-const config = require('./config/config.js');
 require("./config/passport")(passport)
 
 //mongoose
-mongoose.connect(config.uri,
+mongoose.connect(process.env.URI,
 {useNewUrlParser: true, useUnifiedTopology : true})
 .then(() => console.log('Connected to Cluster'))
 .catch((err)=> console.log(err));
