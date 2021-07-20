@@ -124,6 +124,8 @@ h3 {
 
 .section__title--intro {
   font-weight: var(--fw-reg);
+  text-align: center;
+  width: 952px;
 }
 
 .section__title--intro strong {
@@ -361,6 +363,7 @@ header {
 
 .about-me {
   max-width: 1000px;
+  max-height: 650px;
   margin: 0 auto;
 }
 
