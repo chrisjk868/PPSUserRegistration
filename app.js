@@ -10,7 +10,8 @@ const passport = require('passport');
 require("./config/passport")(passport)
 
 //mongoose
-mongoose.connect(process.env.URI,
+mongoose.connect(
+process.env.URI,
 {useNewUrlParser: true, useUnifiedTopology : true})
 .then(() => console.log('Connected to Cluster'))
 .catch((err)=> console.log(err));
@@ -44,5 +45,5 @@ app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log('LISTENING TO PORT')
+    console.log('Listening to Port')
 });
