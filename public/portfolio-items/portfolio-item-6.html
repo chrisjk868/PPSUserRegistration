@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Presque Partout Sino</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="../css/dashboard.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="../images/sino_world_logo.png" alt="">
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">Our Online Courses</a></li>
+                    <li class="nav__item"><a href="index.html#weekly-digests" class="nav__link">Weekly Digest</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">Instructors</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">About Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="intro">
+            <h1 class="section__title section__title--intro">
+                Week 6<strong>Vickrey Auctions</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">By Bruce Changlong Xu</p>
+            <img src="weeklydigests/Vickrey Auctions.png" alt="" class="intro__img">
+        </section>
+        
+        <div class="portfolio-item-individual">
+            <em>March 27, 2021</em>
+            <p>
+                A Vickrey auction is a spin on the traditional notion of an auction, where
+a group of individuals bid successively higher prices to purchase a good that has
+been placed on sale. What happens is that all of the bidders submit their bids on
+a slip of paper without knowledge of anyone else’s bid price – the highest
+bidder obtains the good but only needs to pay the price of the second highest
+bid. This type of auctioning system is supposedly socially optimal, by giving
+bidders an incentive to put forth exactly their own valuations for said good; and
+if not, harming themselves by the exact amount of deviation from this value.
+For example, say an individual is willing to put forth at most 50USD to
+purchase a particular textbook for the course that they are taking next semester.
+If they bid a value of 55USD, they run the risk of overpaying past their
+threshold of tolerance by < 5USD, as the second highest bidder could
+potentially bid between 51 – 54 USD. In a similar vein, suppose the individual bids only 45USD and loses the bid to someone who put forth 49USD. The
+highest bidder now only needs to pay 45USD and obtains the textbook, which
+was a situation that our individual would have been happy to be in. In either
+case, they run the risk of losing out on the optimal scenario if they do not place
+forward their true valuation. 
+            </p>
+
+            <p>
+                Whilst in theory this form of auction is quite appealing, it is quite
+difficult to implement practically. Bidders are often unwilling to disclose their
+information to a third party (auctioneer) and may not trust what they say about
+the second-highest bid. As a result, other auction implementations are more
+common in the real world. The First Price Sealed Bid Auction simply mandates
+that the highest bidder pays whatever price that they put forward. This has been
+shown to be game-theoretically equivalent to the Dutch Auction, which initiates
+a price that the auctioneer sets, that is continually lowered until a bidder accepts
+the current price. Both auctions hinge upon the tradeoff between the price that a
+bidder needs to pay and the probability of holding the highest bid, implying
+equivalent Bayesian Nash equilibrium bid functions. 
+            </p>
+
+            <p>
+                Paul Milgrom studied Vickrey Auctions and formulated the linkage
+                principle throughout his tenure at Northwestern, forming the canon of much of
+                modern-day auction theory. Much of this theoretical work influences the way
+                you and I live and work on a daily basis – the way amazon prices its goods, the
+                way Google Search operates, whether AT&T or Verizon gets priority over
+                broadcast signals and more. Auctions are everywhere and having an awareness
+                of how they work will do wonders. 
+            </p>
+        </div>
+        
+         <!-- Footer -->
+         <footer class="footer">
+            <!-- replace with your own email address -->
+            Copyright 2021. All rights reserved.
+            <br>
+            <a href="https://brucechanglongxu.github.io" class="footer__link">Bruce Changlong Xu
+            <br>
+            <a href="https://avrumnoor.github.io" class="footer__link">Avrum Noor
+            </a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://instagram.com">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://twitter.com">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        
+        
+        <script src="../js/index.js"></script>
+        
+    </body>
+</html>

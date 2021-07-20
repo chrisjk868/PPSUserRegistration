@@ -1,3 +1,292 @@
-<h1>Dashboard</h1>
+<!-- <h1>Dashboard</h1>
 <p> Welcome <%= user.name %></p>
-<a href="/users/logout">Logout</a>
+<a href="/users/logout">Logout</a> -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/dashboard.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="/images/sino_world_logo.png" alt="">
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">Our Online Courses</a></li>
+                    <li class="nav__item"><a href="https://avrumnoor.github.io/SinoEditor" class="nav__link">Sino Editor</a></li>
+                    <li class="nav__item"><a href="#weekly-digests" class="nav__link">Weekly Digest</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">Instructors</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">About Us</a></li>
+                </ul>
+            </nav>
+            <a href="/users/logout">Logout</a>
+        </header>
+
+        <!-- Introduction -->
+        <section class="intro" id="home">
+            <h1 class="section__title section__title--intro">
+                Welcome <%= user.name %>
+                <!-- Welcome to<strong>Presque Partout Sino</strong> -->
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">High Quality Online Professional Education<br> From California, Boston and Seattle to Hong Kong and Indonesia</p>
+            <img src="/images/presque_logo.png" alt="" class="intro__img">
+        </section>
+
+        <!-- Online Courses -->
+        <section class="my-work" id="work">
+            <h2 class="section__title section__title--work">Online Courses</h2>
+            <p class="section__subtitle section__subtitle--work">A selection of our online courses</p>
+
+            <div class="portfolio">
+                <!-- Introduction to Approx. Algorithms -->
+                <a href="#home" class="portfolio__item">
+                    <img src="/images/Approximation Algorithms.png" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 02 -->
+                <a href="#home" class="portfolio__item">
+                    <img src="/images/portfolio-02.jpg" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 03 -->
+                <a href="#home" class="portfolio__item">
+                    <img src="/images/portfolio-03.jpg" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 04 -->
+                <a href="#home" class="portfolio__item">
+                    <img src="/images/portfolio-04.jpg" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 05 -->
+                <a href="#home" class="portfolio__item">
+                    <img src="/images/portfolio-05.jpg" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 06 -->
+                <a href="#home" class="portfolio__item">
+                    <img src="/images/portfolio-06.jpg" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 07 -->
+                <a href="#home" class="portfolio__item">
+                    <img src="/images/portfolio-07.jpg" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 08 -->
+                <a href="#home" class="portfolio__item">
+                    <img src="/images/portfolio-08.jpg" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 09 -->
+                <a href="#home" class="portfolio__item">
+                    <img src="/images/portfolio-09.jpg" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 0 0-->
+                <a href="#home" class="portfolio__item">
+                    <img src="/images/portfolio-10.jpg" alt="" class="portfolio__img">
+                </a>
+            </div>
+        </section>
+
+        <section class="sino-editor">
+            <h1 class="section__title">
+                <br>
+                <br>
+                Try out the new <strong>Sino Editor Beta.</strong>
+            </h1>
+            <p class="section__subtitle">Convenient text editor to accompany you during lectures.<br>
+                <strong>(More Features Coming Soon)</strong></p>
+            <br>
+            <a href="https://avrumnoor.github.io/SinoEditor" class="btn">Check Out Sino Editor</a>
+        </section>
+
+        <!-- Weekly Digests -->
+        <section class="my-weeklydigests" id="weekly-digests">
+            <h2 class="section__title section__title--weeklydigests">Weekly Digests</h2>
+            <p class="section__subtitle section__subtitle--work">Weekly newsletters and insights directly from our team.</p>
+            <div class="portfolio">
+
+                <!-- Time as a Parameter -->
+                <a class="portfolio__item" href="/portfolio-items/portfolio-item-8.html">
+                    <img src="/weeklydigests/Tree of Time.png" alt="" class="portfolio__img">
+                    <div class="footer">
+                        <div href="" class="footer__link">Week 8</div>
+                    </div>
+                </a>
+
+                <!-- Exercise -->
+                <a class="portfolio__item" href="/portfolio-items/portfolio-item-7.html">
+                    <img src="/weeklydigests/Exercise.png" alt="" class="portfolio__img">
+                    <div class="footer">
+                        <div href="" class="footer__link">Week 7</div>
+                    </div>
+                </a>
+
+                <!-- Vickrey Auctions -->
+                <a class="portfolio__item" href="/portfolio-items/portfolio-item-6.html">
+                    <img src="/weeklydigests/Vickrey Auctions.png" alt="" class="portfolio__img">
+                    <div class="footer">
+                        <div href="" class="footer__link">Week 6</div>
+                    </div>
+                </a>
+
+                <!-- The Case against Scarcity -->
+                <a class="portfolio__item" href="/portfolio-items/portfolio-item-5.html">
+                    <img src="/weeklydigests/The_Case_against_Scarcity.png" alt="" class="portfolio__img">
+                    <div class="footer">
+                        <div href="" class="footer__link">Week 5</div>
+                    </div>
+                </a>
+
+                <!-- Constancy and Continuity -->
+                <a class="portfolio__item" href="/portfolio-items/portfolio-item-4.html">
+                    <img src="/weeklydigests/Constancy_and_Continuity.png" alt="" class="portfolio__img">
+                    <div class="footer">
+                        <div href="" class="footer__link">Week 4</div>
+                    </div>
+                </a>
+
+                <!-- Information Loss -->
+                <a class="portfolio__item" href="/portfolio-items/portfolio-item-3.html">
+                    <img src="/weeklydigests/Information_Loss.png" alt="" class="portfolio__img">
+                    <div class="footer">
+                        <div href="" class="footer__link">Week 3</div>
+                    </div>
+                </a>
+
+                <!-- Self Care -->
+                <a class="portfolio__item" href="/portfolio-items/portfolio-item-2.html">
+                    <img src="/weeklydigests/Self Care.png" alt="" class="portfolio__img">
+                    <div class="footer">
+                        <div href="" class="footer__link">Week 2</div>
+                    </div>
+                </a>
+
+                <!-- Hidden Value of Mathematics-->
+                <a class="portfolio__item" href="/portfolio-items/portfolio-item.html">
+                    <img src="/weeklydigests/Erdos.png" alt="" class="portfolio__img">
+                    <div class="footer">
+                        <div href="" class="footer__link">Week 1</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- About me -->
+         <section class="about-me" id="about">
+            <h2 class="section__title section__title--about">Learn from Passionate and Committed Instructors: </h2>
+            <h3 class ="section__subtitle section__subtitle--about">Bruce Changlong Xu</h3>
+            <div class="about-me__body">
+                <p> <strong>About:</strong> Bruce Changlong Xu is an undergraduate at <em>Stanford University</em>,
+                 majoring in <em>Electrical Engineering</em> and <em>Math</em> and minoring in <em>Chemistry</em>. 
+                 He is originally from Auckland, New Zealand and grew up in Pok Fu Lam, Hong Kong. He is passionate about engaging with the research community and thinking deeply about modern pedagogy. </p>
+                 <p> <strong>Courses:</strong> <em>Introduction to Approximation Algorithms</em>, <em>Introduction to Modern Physics</em></p>
+                 <p> <strong>Fun fact:</strong> His favorite fruit is Avocado 🥑.</p>
+            </div>
+            <img src="/images/Lantana 2.jpg" alt="Bruce gets congratulated by the principle" class="about-me__img">
+         </section>
+
+         <section class="about-me" id="about">
+            <h2 class="section__title section__title--about"></h2>
+            <h3 class ="section__subtitle section__subtitle--about">Christopher Ku</h3>
+            <div class="about-me__body">
+                <p> <strong>About:</strong> Christopher Ku is an undergraduate at <em>University of Washington Seattle</em>,
+                 majoring in <em>Mathematics</em> and studying <em>Computer Science</em>.
+                 He is from Hong Kong. He is passionate about Machine Learning and relevant fields in Data Science. </p>
+                 <p> <strong>Courses:</strong> <em>Introduction to Databases</em>, <em>Introduction to Mathematical Reasoning</em></p>
+                 <p> <strong>Fun fact:</strong> His favorite cocktail is Piña colada 🍹.</p>
+            </div>
+            <img src="/images/chris.jpg" alt="Christopher Graduation" class="about-me__img">
+         </section>
+
+         <section_2 class="about-me" id="about">
+             <h2 class="section__title section__title--about"></h2>
+             <h3 class ="section__subtitle section__subtitle--about">Avrum Noor</h3>
+             <div class="about-me__body">
+                 <p> <strong>About:</strong> Avrum Noor is an undergraduate at <em>Stanford University</em>,
+                     majoring in <em>Electrical Engineering</em>. 
+                     He is originally from Jakarta, Indonesia. He is passionate about web development and designing computer
+                     networks and systems.</p>
+                     <p> <strong>Courses:</strong> <em>Startups 101</em>, <em>Designing & Prototyping</em></p>
+                     <p> <strong>Fun fact:</strong> His favorite dish is Spaghetti Carbonara 🍝.
+                 </p>
+             </div>
+             <img src="/images/avrum.jpg" alt="Avrum Posing" class="about-me__img">
+          </section_2>
+
+        <!-- My services -->
+        <section class="my-services" id="services">
+            <h2 class="section__title section__title--services">About Us</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Our Mission</h3>
+                    <p>To bring a world class education to your doorstep and equip
+                        high school students in Hong Kong and Indonesia with useful tools
+                        to become leaders in the tech industry and anywhere in the world. </p>
+                </div> <!-- / service -->
+
+                <div class="service">
+                    <h3>Our Vision</h3>
+                    <p>To integrate knowledge and skills from Silicon Valley into the Hong Kong
+                        and Indonesian educational systems in order to improve educational welfare
+                        and accessibility.</p>
+                </div> <!-- / service -->
+
+                <div class="service">
+                    <h3>Our Philosophy</h3>
+                    <p>Our fundamental philosophy is to help a student flourish into their own talents,
+                        owning their strengths in a way that is unique to them through tailored education
+                        ("Precision Education") and data-driven decision making. </p>
+                </div> <!-- / service -->
+            </div> <!-- / services -->
+
+            <a href="#work" class="btn">Check Out Our Online Courses</a>
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- replace with your own email address -->
+            Copyright 2021. All rights reserved.
+            <br>
+            <a href="https://brucechanglongxu.github.io" class="footer__link">Bruce Changlong Xu
+            <br>
+            <a href="https://www.linkedin.com/in/christopher-ku-044332163" class="footer__link">Christopher Ku
+            <br>
+            <a href="https://avrumnoor.github.io" class="footer__link">Avrum Noor
+            </a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://instagram.com">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://twitter.com">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+
+        <script src="js/index.js"></script>
+
+    </body>
+</html>
