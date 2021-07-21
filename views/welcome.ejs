@@ -1,8 +1,85 @@
-<html>
+<!-- <html>
     <head>
     </head>
     <h1>Welcome!</h1>
     <p>Create an account or login</p>
     <a href="/users/register">Register</a>
     <a href="/users/login"> Login</a>
+</html> -->
+<!-- Original Code -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0px;
+        }
+    </style>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "./build/three.module.js",
+            "three/examples/jsm/controls/OrbitControls":"./jsm/controls/OrbitControls.js",
+            "three/examples/jsm/libs/stats.module":"./jsm/libs/stats.module.js"
+          }
+        }
+    </script>
+
+    <script type="glsl" id="vertex_shader">
+        varying vec2 vertexUV;
+        varying vec3 vertexNormal;
+
+        void main() {
+            vertexUV = uv;
+            vertexNormal = normalize(normalMatrix * normal);
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+    </script>
+
+    <script type="glsl" id="fragment_shader">
+        uniform sampler2D globeTexture;
+
+        varying vec2 vertexUV;
+        varying vec3 vertexNormal;
+
+        void main() {
+            float intensity = 1.05 - dot(vertexNormal, vec3(0.0, 0.0, 1.0));
+            vec3 atmosphere = vec3(0.3, 0.5, 1.0) * pow(intensity, 1.5);
+            gl_FragColor = vec4(atmosphere + texture2D(globeTexture, vertexUV).xyz, 1.0);
+        }
+    </script>
+
+    <script type="glsl" id="atmosphere_vertex">
+        varying vec3 vertexNormal;
+
+        void main() {
+            vertexNormal = normalize(normalMatrix * normal);
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+    </script>
+
+    <script type="glsl" id="atmosphere_fragment">
+        varying vec3 vertexNormal;
+
+        void main() {
+            float intensity = pow(0.7 - dot(vertexNormal, vec3(0, 0, 1.0)), 2.0);
+            gl_FragColor = vec4(0.3, 0.6, 1.0, 1.0) * intensity;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Welcome!</h1>
+    <p>Create an account or login</p>
+    <a href="/users/register">Register</a>
+    <a href="/users/login"> Login</a>
+    <script type="module" src="/js/globe.js"></script>
+</body>
+
 </html>
