@@ -1,19 +1,20 @@
-const express = require('express');
-const router = express.Router();
-const path = require('path')
-const app = express();
-const mongoose = require('mongoose');
-const expressEjsLayout = require('express-ejs-layouts')
-const session = require('express-session');
-const flash = require('connect-flash');
+let express = require('express');
+let router = express.Router();
+let path = require('path')
+let app = express();
+let mongoose = require('mongoose');
+let expressEjsLayout = require('express-ejs-layouts')
+let session = require('express-session');
+let flash = require('connect-flash');
 require('dotenv').config();
-const passport = require('passport');
+let passport = require('passport');
 require("./config/passport")(passport)
 
 
 //mongoose
 mongoose.connect(
-process.env.URI,
+'mongodb+srv://chrisjk868:jellyboard@ppsaccountinfocluster.uisvs.mongodb.net/myFirstDatabase?retryWrites=true',
+// process.env.URI,
 {useNewUrlParser: true, useUnifiedTopology : true})
 .then(() => console.log('Connected to Cluster'))
 .catch((err)=> console.log(err));

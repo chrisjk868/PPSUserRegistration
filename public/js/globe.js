@@ -49,7 +49,7 @@ let atmosphere = new THREE.Mesh(
     })
 );
 
-atmosphere.scale.set(1.1, 1.1, 1.1);
+atmosphere.scale.set(1.2, 1.2, 1.2);
 
 scene.add(atmosphere);
 
@@ -57,41 +57,65 @@ let group = new THREE.Group();
 group.add(sphere);
 scene.add(group);
 
-let starGeometry = new THREE.BufferGeometry();
-let starMaterial = new THREE.PointsMaterial({
-    color: 0xffffff
-});
+//create stars
+const getRandomParticelPos = (particleCount) => {
+    const arr = new Float32Array(particleCount * 3);
+    for (let i = 0; i < particleCount; i++) {
+      arr[i] = (Math.random() - 0.5) * 30;
+    }
+    return arr;
+};
 
-// let starVerticies = [];
-// for(let i = 0; i < 10000; i++) {
-//     let x = (Math.random() - 0.5) * 250;
-//     let y = (Math.random() - 0.5) * 250;
-//     let z = -Math.random() * 3000;
-//     starVerticies.push(x, y, z);
-// }
-// starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVerticies, 3));
-// console.log(starVerticies);
-// let stars = new THREE.Points(starGeometry, starMaterial);
-// scene.add(stars);
+renderer.setClearColor(new THREE.Color("#000000"));
+
+// light source
+const color = 0xffffff;
+const intensity = 1;
+const light = new THREE.DirectionalLight(color, intensity);
+light.position.set(-1, 2, 4);
+scene.add(light);
+
+// star geometry
+const geometrys = [new THREE.BufferGeometry(), new THREE.BufferGeometry()];
+
+geometrys[0].setAttribute(
+    "position",
+    new THREE.BufferAttribute(getRandomParticelPos(350), 3)
+);
+geometrys[1].setAttribute(
+    "position",
+    new THREE.BufferAttribute(getRandomParticelPos(1500), 3)
+);
+
+const loader = new THREE.TextureLoader();
+
+// star material
+const materials = [
+    new THREE.PointsMaterial({
+        size: 0.15,
+        map: loader.load("https://raw.githubusercontent.com/Kuntal-Das/textures/main/sp1.png"),
+        transparent: true,
+        color: "#ffffff"
+    }),
+    new THREE.PointsMaterial({
+        size: 0.15,
+        map: loader.load("https://raw.githubusercontent.com/Kuntal-Das/textures/main/sp2.png"),
+        transparent: true,
+        color: "#ffffff"
+    })
+];
+
+const starsT1 = new THREE.Points(geometrys[0], materials[0]);
+const starsT2 = new THREE.Points(geometrys[1], materials[1]);
+scene.add(starsT1);
+scene.add(starsT2);
 
 camera.position.z = 15;
-
-let mouse = {
-    x: undefined,
-    y: undefined
-}
 
 let animate = function () {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
     sphere.rotation.y += 0.003;
     controls.update();
-    // group.rotation.y = mouse.x * 0.5
-    // group.rotation.x = mouse.y * 0.5
 };
 animate();
-
-// addEventListener('mousemove', () => {
-//     mouse.x = (event.clientX / innerWidth * 2 - 1)
-//     mouse.y = (event.clientY / innerHeight * 2 + 1)
-// })
