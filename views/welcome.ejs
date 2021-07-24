@@ -36,6 +36,10 @@
             background-color: #838582;
         }
 
+        canvas {
+            position: absolute;
+        }
+
         .anchorWrap {
             justify-content: center;
             text-align: center;
@@ -103,18 +107,14 @@
     </script>
 
     <script type='text/javascript'>
-
-        (function()
-        {
-          if( window.localStorage )
-          {
-            if( !localStorage.getItem('firstLoad') )
-            {
-              localStorage['firstLoad'] = true;
+        (function() {
+          if( window.localStorage ) {
+            if( !localStorage.getItem('firstLoad') ) {
+                localStorage['firstLoad'] = true;
               window.location.reload();
+            } else {
+                localStorage.removeItem('firstLoad');
             }
-            else
-              localStorage.removeItem('firstLoad');
           }
         })();
     </script>
@@ -144,7 +144,6 @@
         </div>
     </div>
     <script type="module" src="/js/globe.js"></script>
-    <!-- <script type="module" src="/js/stars.js"></script> -->
 </body>
 
 </html>

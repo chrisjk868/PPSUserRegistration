@@ -61,7 +61,7 @@ scene.add(group);
 const getRandomParticelPos = (particleCount) => {
     const arr = new Float32Array(particleCount * 3);
     for (let i = 0; i < particleCount; i++) {
-      arr[i] = (Math.random() - 0.5) * 30;
+      arr[i] = (Math.random() - 0.5) * 40;
     }
     return arr;
 };
