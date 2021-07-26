@@ -18,7 +18,7 @@ router.get('/register', (req, res) => {
 router.post('/register', (req, res) => {
   const {name,email, password, password2} = req.body;
   let errors = [];
-  console.log(' Name ' + name + ' email :' + email + ' pass:' + password);
+  // console.log(' Name ' + name + ' email :' + email + ' pass:' + password);
   if(!name || !email || !password || !password2) {
       errors.push({msg : "Please fill in all fields"})
   }
@@ -42,8 +42,8 @@ router.post('/register', (req, res) => {
     User.findOne({email : email}).exec((err, user) => {
       console.log(user);
       if(user) {
-        errors.push({msg: 'email has already been registered'});
-        render(res, errors, name, email, password, password2);
+        errors.push({msg: 'Email has already been registered'});
+        res.render('register',{errors,name,email,password,password2});
       } else {
         const newUser = new User({
           name : name,

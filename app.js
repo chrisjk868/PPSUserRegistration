@@ -10,7 +10,6 @@ require('dotenv').config();
 let passport = require('passport');
 require("./config/passport")(passport)
 
-
 //mongoose
 mongoose.connect(
 process.env.URI,
