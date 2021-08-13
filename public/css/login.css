@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:200');
 @import url('https://fonts.googleapis.com/css?family=Khula:700');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,300&display=swap');
 
 * {
     box-sizing: border-box;
@@ -28,8 +29,13 @@ body {
 
 form {
     display: block;
-    width: 268px;
+    width: 390px;
+    height: 390px;
+    padding-top: 0%;
+    margin-left: 50px;
+    margin-bottom: 200px;
 }
+
 
 h1.align {
     margin-left: auto;
@@ -75,7 +81,7 @@ input:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 177px 130px 33px 95px;
+    padding: 80px 130px 33px 95px;
     /* float up animation */
     -webkit-animation-duration:2s;
     -moz-animation-duration:2s;
@@ -117,9 +123,12 @@ input:focus {
 }
 
 .login100-form-btn {
-    font-family: 'Raleway';
-    font-weight: bold;
+    font-family: 'Exo 2', sans-serif;
     font-size: 15px;
+    font-weight: bold;
+    /* font-family: 'Raleway';
+    font-weight: bold;
+    font-size: 15px; */
     line-height: 1.5;
     color: #fff;
     text-transform: uppercase;
@@ -142,12 +151,9 @@ input:focus {
 }
 
 .login100-form-title {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 30px;
-    font-weight: 600;
     color: rgb(83, 83, 83);
-    line-height: 1.2;
     text-align: center;
+    height: 600;
     width: 100%;
     display: block;
     padding-bottom: 24px;
