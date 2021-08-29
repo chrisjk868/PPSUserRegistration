@@ -180,6 +180,89 @@ iframe {
 
 .wrap-login100 {
   width: 560px;
+  /*float up animation*/
+  -webkit-animation-duration:2s;
+  -moz-animation-duration:2s;
+  -o-animation-duration:2s;
+  animation-duration:2s;
+  -webkit-animation-name:float-up;
+  -moz-animation-name:float-up;
+  -o-animation-name:float-up;
+  animation-name:float-up;
+  -webkit-animation-iteration-count:1;
+  -moz-animation-iteration-count:1;
+  -o-animation-iteration-count:1;
+  animation-iteration-count:1;
+  -webkit-animation-timing-function:ease-out;
+  -moz-animation-timing-function:ease-out;
+  -o-animation-timing-function:ease-out;
+  animation-timing-function:ease-out;
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  -o-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  position:relative;
+}
+
+@-webkit-keyframes float-up {
+  0% {
+      top:500px;
+      opacity:0;
+  }
+  25% {
+      opacity:1;
+  }
+  35% {
+      top:-20px;
+  }
+  100% {
+      top:10px;
+  }
+}
+@-moz-keyframes float-up {
+  0% {
+      top:500px;
+      opacity:0;
+  }
+  25% {
+      opacity:1;
+  }
+  35% {
+      top:-20px;
+  }
+  100% {
+      top:10px;
+  }
+}
+@-o-keyframes float-up {
+  0% {
+      top:500px;
+      opacity:0;
+  }
+  25% {
+      opacity:1;
+  }
+  35% {
+      top:-20px;
+  }
+  100% {
+      top:10px;
+  }
+}
+@-keyframes float-up {
+  0% {
+      top:500px;
+      opacity:0;
+  }
+  25% {
+      opacity:1;
+  }
+  35% {
+      top:-20px;
+  }
+  100% {
+      top:10px;
+  }
 }
 
 .justify-center {
@@ -371,11 +454,10 @@ input.input100 {
   height: 100%;
   opacity: 0;
 
-  background: #2575fc;
-  background: -webkit-linear-gradient(right, #6a11cb, #2575fc);
-  background: -o-linear-gradient(right, #6a11cb, #2575fc);
-  background: -moz-linear-gradient(right, #6a11cb, #2575fc);
-  background: linear-gradient(right, #6a11cb, #2575fc);
+  background: -webkit-linear-gradient(right, #bdc3c7, #2c3e50);
+  background: -o-linear-gradient(right, #bdc3c7, #2c3e50);
+  background: -moz-linear-gradient(right, #bdc3c7, #2c3e50);
+  background: linear-gradient(right, #bdc3c7, #2c3e50);
 
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
