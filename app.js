@@ -12,7 +12,7 @@ require("./config/passport")(passport)
 
 //mongoose
 mongoose.connect(
-process.env.URI,
+'mongodb+srv://chrisjk868:jellyboard@ppsaccountinfocluster.uisvs.mongodb.net/myFirstDatabase?retryWrites=true', //process.env.URI,
 {useNewUrlParser: true, useUnifiedTopology : true})
 .then(() => console.log('Connected to Cluster'))
 .catch((err)=> console.log(err));
